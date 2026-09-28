@@ -10,7 +10,7 @@ export default function JobApply() {
   const [applied, setApplied] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost/backend/api/jobs.php')
+    fetch('https://mano-project-backend.infinityfree.io/api/jobs.php')
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') {
@@ -29,7 +29,7 @@ export default function JobApply() {
       formData.append('job_id', job.id);
       formData.append('name', name);
 
-      fetch('http://localhost/backend/api/apply.php', {
+      fetch('https://mano-project-backend.infinityfree.io/api/apply.php', {
         method: 'POST',
         body: formData
       })

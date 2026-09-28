@@ -8,7 +8,7 @@ export default function AdminDashboard() {
   const [newJob, setNewJob] = useState({ title: '', role: '', skills: '', description: '' });
 
   const fetchJobs = () => {
-    fetch('http://localhost/backend/api/jobs.php')
+    fetch('https://mano-project-backend.infinityfree.io/api/jobs.php')
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') setJobs(data.data);
@@ -21,7 +21,7 @@ export default function AdminDashboard() {
 
   const handleCreate = (e: React.FormEvent) => {
     e.preventDefault();
-    fetch('http://localhost/backend/api/jobs.php', {
+    fetch('https://mano-project-backend.infinityfree.io/api/jobs.php', {
       method: 'POST',
       body: JSON.stringify(newJob)
     }).then(() => {
@@ -32,7 +32,7 @@ export default function AdminDashboard() {
   };
 
   const updateStatus = (id: number, status: string) => {
-    fetch('http://localhost/backend/api/jobs.php', {
+    fetch('https://mano-project-backend.infinityfree.io/api/jobs.php', {
       method: 'PUT',
       body: JSON.stringify({ id, status })
     }).then(() => {

@@ -9,7 +9,7 @@ export default function JobCandidates() {
   const [minScore, setMinScore] = useState(0);
 
   useEffect(() => {
-    fetch('http://localhost/backend/api/jobs.php')
+    fetch('https://mano-project-backend.infinityfree.io/api/jobs.php')
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') {
@@ -18,7 +18,7 @@ export default function JobCandidates() {
         }
       });
 
-    fetch(`http://localhost/backend/api/resumes.php?job_id=${id}`)
+    fetch(`https://mano-project-backend.infinityfree.io/api/resumes.php?job_id=${id}`)
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') {

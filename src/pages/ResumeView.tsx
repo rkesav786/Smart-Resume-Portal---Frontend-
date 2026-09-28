@@ -8,12 +8,12 @@ export default function ResumeView() {
   const [job, setJob] = useState<any>(null);
   
   useEffect(() => {
-    fetch(`http://localhost/backend/api/resumes.php?id=${id}`)
+    fetch(`https://mano-project-backend.infinityfree.io/api/resumes.php?id=${id}`)
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') {
           setCandidate(data.data);
-          fetch('http://localhost/backend/api/jobs.php')
+          fetch('https://mano-project-backend.infinityfree.io/api/jobs.php')
             .then(res => res.json())
             .then(jobData => {
               if (jobData.status === 'success') {

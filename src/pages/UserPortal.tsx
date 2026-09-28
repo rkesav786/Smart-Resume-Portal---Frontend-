@@ -6,7 +6,7 @@ export default function UserPortal() {
   const [jobs, setJobs] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost/backend/api/jobs.php')
+    fetch('https://mano-project-backend.infinityfree.io/api/jobs.php')
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') {
